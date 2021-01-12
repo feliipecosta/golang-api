@@ -10,7 +10,7 @@ func setupRoutes(app *fiber.App) {
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusOK).JSON(fiber.Map{
 			"success": true,
-			"message": "Root",
+			"message": "Here is an endpoint.",
 		})
 	})
 
@@ -19,11 +19,11 @@ func setupRoutes(app *fiber.App) {
 	api.Get("", func(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusOK).JSON(fiber.Map{
 			"success": true,
-			"message": "API endpoint",
+			"message": "API endpoint.",
 		})
 	})
 
-	routes.TestRoute(api.Group("/test"))
+	routes.TasksRoute(api.Group("/tasks"))
 }
 
 func main() {
